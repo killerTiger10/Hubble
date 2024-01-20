@@ -12,7 +12,7 @@ const LoginPage = () => {
         p="1rem 6%"
         textAlign="center"
       >
-        <Typography fontWeight="bold" fontSize="32px" color="primary">
+        <Typography fontWeight="bold" fontSize="clamp(32px)" color="primary">
           Hubble
         </Typography>
       </Box>

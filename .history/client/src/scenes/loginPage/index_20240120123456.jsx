@@ -1,18 +1,18 @@
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/system";
 import Form from "./Form";
 
 const LoginPage = () => {
   const theme = useTheme();
-  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 10000px)");
   return (
     <Box>
       <Box
         width="100%"
         backgroundColor={theme.palette.background.alt}
-        p="1rem 6%"
+        p="1rem 6"
         textAlign="center"
       >
-        <Typography fontWeight="bold" fontSize="32px" color="primary">
+        <Typography fontWeight="bold" fontSize="clamp(32px)" color="primary">
           Hubble
         </Typography>
       </Box>
@@ -24,10 +24,9 @@ const LoginPage = () => {
         borderRadius="1.5rem"
         backgroundColor={theme.palette.background.alt}
       >
-        <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
+        <Typography>
           Welcome to Hubble, the Social Media for Hustlers!
         </Typography>
-        <Form />
       </Box>
     </Box>
   );
