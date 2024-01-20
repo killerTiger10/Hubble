@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box } from "@mui/system";
 import Navbar from "scenes/navbar";
 
 const HomePage = () => {

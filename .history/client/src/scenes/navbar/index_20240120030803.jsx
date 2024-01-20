@@ -43,7 +43,7 @@ const Navbar = () => {
   const fullName = "mahin"; // needs to be updated
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
-      <FlexBetween gap="1.75rem">
+      <FlexBetween>
         <Typography
           fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
@@ -163,7 +163,7 @@ const Navbar = () => {
                 sx={{
                   backgroundColor: neutralLight,
                   width: "150px",
-                  p: "0.25rem 1rem",
+                  p: "0.25 1rem",
                   "& .MuiSvgIcon-root": {
                     pr: "0.25rem",
                     width: "3rem",
