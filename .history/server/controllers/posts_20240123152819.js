@@ -48,6 +48,7 @@ export const getUserPosts = async (req, res) => {
 
 /* UPDATE */
 export const likePost = async (req, res) => {
+  console.log("likePost");
   try {
     const { id } = req.params;
     const { userId } = req.body;
@@ -65,7 +66,7 @@ export const likePost = async (req, res) => {
       { likes: post.likes },
       { new: true }
     );
-
+    console.log(updatedPost);
     res.status(200).json(updatedPost);
   } catch (err) {
     res.status(404).json({ message: err.message });
