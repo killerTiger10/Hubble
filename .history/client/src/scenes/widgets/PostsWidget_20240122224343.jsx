@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, UseDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
 
-const PostsWidget = ({ userId, isProfile = false }) => {
+const PostsWidget = ({ userid, isProfile }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
@@ -18,20 +18,17 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   };
 
   const getUserPosts = async () => {
-    const response = await fetch(
-      `http://localhost:3001/posts/${userId}/posts`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const response = await fetch(`http://localhost:3001/${userId}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
   };
 
   useEffect(() => {
     if (isProfile) {
-      getUserPosts();
+      getUserPosts;
     } else {
       getPosts();
     }
@@ -47,7 +44,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
           lastName,
           description,
           location,
-          picturePath,
+          picturPath,
           userPicturePath,
           likes,
           comments,
@@ -59,8 +56,8 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             name={`${firstName} ${lastName}`}
             description={description}
             location={location}
-            picturePath={picturePath}
-            userPicturePath={userPicturePath}
+            picturPath={picturPath}
+            userPicturPath={userPicturePath}
             likes={likes}
             comments={comments}
           />
