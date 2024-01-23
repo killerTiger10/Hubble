@@ -43,7 +43,10 @@ const PostWidget = ({
       },
       body: JSON.stringify({ userId: loggedInUserId }),
     });
-
+    if (!response.ok) {
+      console.error(`Error: ${response.status} - ${response.statusText}`);
+      return;
+    }
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   };
